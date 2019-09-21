@@ -17,4 +17,13 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }
